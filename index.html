@@ -525,6 +525,10 @@
 			.bindPopup("<b>西南财经大学</b><br />吴光波").openPopup();
 		L.marker([29.5602586,106.4520243]).addTo(mymap)
 			.bindPopup("<b>重庆大学</b><br />陈秋羽").openPopup();
+			function onZoomClick(e){
+				L.map('mapid').setView([40.21801, 116.24093],17);
+			}
+		L.marker([40.21801, 116.24093]).on('dblclick',onZoomClick);
 
 		L.circle([51.508, -0.11], 500, {
 			color: 'red',
@@ -552,10 +556,4 @@
 
 	</script>
 </body>
-	<script>
-	var width=window.screen.width;
-	var height=window.screen.height;
-	document.getElementById("mapid").width=width;
-	document.getElementById("mapid").height=height;
-	</script>
 </html>
