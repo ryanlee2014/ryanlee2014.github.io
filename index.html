@@ -506,35 +506,34 @@
 
 
 		L.marker([40.21801, 116.24093]).addTo(mymap)
-			.bindPopup("<b>中国石油大学（北京）</b><br />李昊元 计算机科学与技术").openPopup();
+			.bindPopup("<b>中国石油大学（北京）</b><br />李昊元 计算机科学与技术").openPopup().on('click',onZoomClick);
 		L.marker([22.4215193,114.2056539]).addTo(mymap)
-			.bindPopup("<b>香港中文大学</b><br />姜楚元").openPopup();
+			.bindPopup("<b>香港中文大学</b><br />姜楚元").openPopup().on('click',onZoomClick);
 		L.marker([39.9996715,116.3242552]).addTo(mymap)
-			.bindPopup("<b>清华大学</b><br />刘晋源 航空航天").openPopup();
+			.bindPopup("<b>清华大学</b><br />刘晋源 航空航天").openPopup().on('click',onZoomClick);
 		L.marker([32.0568436,118.7767715]).addTo(mymap)
-			.bindPopup("<b>南京大学</b><br />张钰洁").openPopup();
+			.bindPopup("<b>南京大学</b><br />张钰洁").openPopup().on('click',onZoomClick);
 		L.marker([31.0252247,121.4315897]).addTo(mymap)
-			.bindPopup("<b>上海交通大学</b><br />孙子雯").openPopup();
+			.bindPopup("<b>上海交通大学</b><br />孙子雯").openPopup().on('click',onZoomClick);
 		L.marker([39.9803846,116.4255769]).addTo(mymap)
-			.bindPopup("<b>对外经贸大学</b><br />谢晓雯 汉语国际教育").openPopup();		
+			.bindPopup("<b>对外经贸大学</b><br />谢晓雯 汉语国际教育").openPopup().on('click',onZoomClick);
 		L.marker([22.3388409,114.1706513]).addTo(mymap)
-			.bindPopup("<b>香港城市大学</b><br />谢铭 商学院").openPopup();
+			.bindPopup("<b>香港城市大学</b><br />谢铭 商学院").openPopup().on('click',onZoomClick);
 		L.marker([30.621447,104.0799553]).addTo(mymap)
 			.bindPopup("<b>四川大学</b><br />梁晖明").openPopup();
 		L.marker([30.6646046,104.0149213]).addTo(mymap)
-			.bindPopup("<b>西南财经大学</b><br />吴光波").openPopup();
+			.bindPopup("<b>西南财经大学</b><br />吴光波").openPopup().on('click',onZoomClick);
 		L.marker([29.5602586,106.4520243]).addTo(mymap)
-			.bindPopup("<b>重庆大学</b><br />陈秋羽").openPopup();
+			.bindPopup("<b>重庆大学</b><br />陈秋羽").openPopup().on('click',onZoomClick);
 		L.marker([39.9944286,116.3477185]).addTo(mymap)
-			.bindPopup("<b>北京语言大学</b><br />钟源").openPopup();
+			.bindPopup("<b>北京语言大学</b><br />钟源").openPopup().on('click',onZoomClick);
 		L.marker([39.9619578,116.3640728]).addTo(mymap)
-			.bindPopup("<b>北京师范大学</b><br />梁靖华 人文科学实验班").openPopup();
+			.bindPopup("<b>北京师范大学</b><br />梁靖华 人文科学实验班").openPopup().on('click',onZoomClick);
 		L.marker([39.9554892,116.3083234]).addTo(mymap)
-			.bindPopup("<b>北京外国语大学</b><br />温燕玲 外交");
+			.bindPopup("<b>北京外国语大学</b><br />温燕玲 外交").openPopup().on('click',onZoomClick);
 			function onZoomClick(e){
-				mymap.panTo([40.21801, 116.24093]);
+				mymap.setView([e.latlng.lat,e.latlng.lng],14);
 			}
-		L.marker([40.21801, 116.24093]).on('dblclick',onZoomClick);
 
 		L.circle([51.508, -0.11], 500, {
 			color: 'red',
@@ -543,9 +542,9 @@
 		}).addTo(mymap).bindPopup("I am a circle.");
 
 		L.polygon([
-			[51.509, -0.08],
-			[51.503, -0.06],
-			[51.51, -0.047]
+			[40.45949, 117.85034],
+			[40.34654, 113.81836],
+			[38.68551, 116.32324],
 		]).addTo(mymap).bindPopup("I am a polygon.");
 
 
@@ -554,7 +553,7 @@
 		function onMapClick(e) {
 			popup
 				.setLatLng(e.latlng)
-				.setContent("你所点击的经纬度为" + e.latlng.toString())
+				.setContent("你所点击的经纬度为" + e.latlng.lat.toFixed(4)+","+e.latlng.lng.toFixed(4))
 				.openOn(mymap);
 		}
 
