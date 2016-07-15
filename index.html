@@ -4,7 +4,6 @@
 <head>
 	<title>高2013级23班毕业去向</title>
 	<meta charset="utf-8" />
-
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 	<style>
 	/* required styles */
@@ -490,7 +489,6 @@
 </head>
 <body>
 	<div id="mapid" style="width: 97%; height: 98% ;position: absolute"></div>
-
 	<script src="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet.js"></script>
 	<script>
 var mX,mY=new Number();
@@ -521,7 +519,7 @@ var mX,mY=new Number();
 		L.marker([22.3388409,114.1706513]).addTo(mymap)
 			.bindPopup("<b>香港城市大学</b><br />谢铭 商学院").openPopup().on('click',onZoomClick);
 		L.marker([30.621447,104.0799553]).addTo(mymap)
-			.bindPopup("<b>四川大学</b><br />梁晖明<br />何姝玥<br />庞锐思<br />王楚胭").openPopup().on('click',onZoomClick);
+			.bindPopup("<b>四川大学</b><br />梁晖明<br />何姝玥 光电信息科学与工程<br />庞锐思 高分子材料与工程<br />王楚胭").openPopup().on('click',onZoomClick);
 		L.marker([30.6646046,104.0149213]).addTo(mymap)
 			.bindPopup("<b>西南财经大学</b><br />吴光波<br />李俊宏").openPopup().on('click',onZoomClick);
 		L.marker([29.5602586,106.4520243]).addTo(mymap)
@@ -561,10 +559,10 @@ var mX,mY=new Number();
 				//.setContent("你所点击的经纬度为" + e.latlng.lat.toFixed(4)+","+e.latlng.lng.toFixed(4))
 			//	.setContent()
 			//	.openOn(mymap);
+			//alert(e.target.getBounds().getEast());
 		}
 
 		mymap.on('click', onMapClick);
-
 	</script>
 </body>
 </html>
